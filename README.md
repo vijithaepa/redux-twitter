@@ -55,6 +55,10 @@ mapDispatchToProps - If an object is passed, each function inside it is assumed 
     It’s up to you to return an object that somehow uses dispatch to bind action creators in 
     your own way. (Tip: you may use the bindActionCreators() helper from Redux.)
 ```
+- The important thing to notice here is that mapStateToProps accepts two arguments:
+
+      The state of the store
+      The props passed to the Tweet component
 ## License
 
 MIT
