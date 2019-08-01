@@ -10,6 +10,18 @@ Most of the commits in this repository correspond to videos in the program.
 * install the dependencies - `npm install`
 
 ## Notes:
+- Normalized state would look like this:
+```{
+     tweets: {
+       tweetId: { tweetId, authorId, timestamp, text, likes, replies, replyingTo},
+       tweetId: { tweetId, authorId, timestamp, text, likes, replies, replyingTo}
+     },
+     users: {
+       userId: {userId, userName, avatar, tweetsArray},
+       userId: {userId, userName, avatar, tweetsArray}
+     }
+   }
+   ```
 - All middleware follows this currying pattern:
 ```
     const logger = (store) => (next) => (action) => {

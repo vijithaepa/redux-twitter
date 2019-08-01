@@ -6,7 +6,7 @@ import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
 
-    componentDidMount() {qq
+    componentDidMount() {
         this.props.dispatch(handleInitialData())
     }
 
