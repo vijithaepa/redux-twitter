@@ -10,7 +10,7 @@ Most of the commits in this repository correspond to videos in the program.
 * install the dependencies - `npm install`
 
 ## Notes:
-- Normalized state would look like this:
+- Normalized Store would look like this:
 ```{
      tweets: {
        tweetId: { tweetId, authorId, timestamp, text, likes, replies, replyingTo},
@@ -70,7 +70,12 @@ mapDispatchToProps - If an object is passed, each function inside it is assumed 
 - The important thing to notice here is that mapStateToProps accepts two arguments:
 
       The state of the store
-      The props passed to the Tweet component
+      The props (from Calling) passed to the component (eg: Tweet)
+      
+- Two type of components
+    * Container Components : connect with the Store
+    * Controlled Components : manage the state inside
+    
 ## License
 
 MIT

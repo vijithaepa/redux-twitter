@@ -1,4 +1,4 @@
-import { RECEIVE_TWEETS, TOGGLE_TWEET } from "../actions/tweets";
+import { ADD_TWEET, RECEIVE_TWEETS, TOGGLE_TWEET } from "../actions/tweets";
 
 
 const tweets = (state = {}, action) => {
@@ -17,7 +17,24 @@ const tweets = (state = {}, action) => {
                         ? state[action.id].likes.concat(action.authedUser)
                         : state[action.id].likes.filter((uid) => uid !== action.authedUser)
                 },
+            }
+        case ADD_TWEET:
+            console.log('Tweets ', state, action)
+            const {tweet} = action
+            let replyingTo = {}
+            if(tweet.replyingTo !== null) {
+                replyingTo = {
+                    [tweet.replyingTo]: {
+                        ...state[tweet.replyingTo],
+                        replies: state[tweet.replyingTo].replies.concat(tweet.id)
+                    }
+                }
+            }
 
+            return {
+                ...state,
+                [tweet.id]: tweet,
+                ...replyingTo,
             }
         default:
             return state
