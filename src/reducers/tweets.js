@@ -19,7 +19,6 @@ const tweets = (state = {}, action) => {
                 },
             }
         case ADD_TWEET:
-            console.log('Tweets ', state, action)
             const {tweet} = action
             let replyingTo = {}
             if(tweet.replyingTo !== null) {
